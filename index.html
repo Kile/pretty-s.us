@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        body {
+            text-align: center;
+            min-height: 100%;
+            background-color: white;
+        }
+
+        html {
+            min-height: 100%;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <h1 id='maintext'></h1>
+</body>
+<script>
+    window.onload = () => {
+        type(0, 'maintext');
+        console.log("Hi there. This is the console. You probably know that. Why else would you open this? Anyways, yeah. You're pretty sus. Even more so because you looked here.")
+    }
+    var txt = "Hey|You|Yes|You|You're|_Pretty Sus";
+    var ia = [0];
+    function type(n, id) {
+        if (ia[n] === undefined) {
+            console.log(n)
+            ia.push(0);
+            type(n);
+        }
+        if (ia[n] < txt.length) {
+            var skip = false;
+            if (txt.charAt(ia[n]) !== '|' && txt.charAt(ia[n]) !== '_')
+                document.getElementById(id).innerHTML += txt.charAt(ia[n]);
+            else if (txt.charAt(ia[n]) === '|') {
+                skip = true;
+                document.getElementById(id).innerHTML += '<br><br>';
+                ia[n]++;
+                setTimeout(function () { type(n, id) }, 200);
+            }
+            else { skip = true; ia[n]++; setTimeout(function () { type(n, id) }, 800) }
+            if (!skip) {
+                ia[n]++;
+                setTimeout(function () { type(n, id) }, 80);
+            }
+        }
+    }
+</script>
+
+</html>
