@@ -1,10 +1,12 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>Pretty sus</title>
     <meta name="description" content="That's pretty sus bro not gonna lie">
-    <meta property="og:image" content="https://media.discordapp.net/attachments/759863805567565925/925898097673007134/IMG_6252.gif" />
+    <meta property="og:image"
+        content="https://media.discordapp.net/attachments/759863805567565925/925898097673007134/IMG_6252.gif" />
     <style>
         body {
             text-align: center;
@@ -21,12 +23,18 @@
             padding: 0;
             margin: 0
         }
+
+        #dtext {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+        }
     </style>
 </head>
 
-<body>
-    <h1></h1>
-    <h1 id='maintext'></h1>
+<body><br>
+    <h1 id='maintext'></h1><br><br><br><br>
+    <p id='dtext'><a href='/disclaimer.html'>Disclaimer</a></p>
 </body>
 <script>
     window.onload = () => {
@@ -49,7 +57,7 @@
                 skip = true;
                 document.getElementById(id).innerHTML += '<br><br>';
                 ia[n]++;
-                setTimeout(function () { type(n, id) }, 400);
+                setTimeout(function () { type(n, id) }, 200);
             }
             else { skip = true; ia[n]++; setTimeout(function () { type(n, id) }, 800) }
             if (!skip) {
