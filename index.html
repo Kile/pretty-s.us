@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Pretty sus</title>
+    <meta name="description" content="That's pretty sus bro not gonna lie">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="0">
+    <meta property="og:image"
+        content="https://media.discordapp.net/attachments/759863805567565925/925898097673007134/IMG_6252.gif" />
+    <style>
+        body {
+            text-align: center;
+            min-height: 100%;
+            background-color: white;
+        }
+
+        html {
+            min-height: 100%;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0
+        }
+
+        #dtext {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+        }
+    </style>
+</head>
+
+<body><br>
+    <h1 id='maintext'></h1><br><br><br><br>
+    <p id='dtext'><a href='/disclaimer.html'>Disclaimer</a></p>
+</body>
+<script>
+    window.onload = () => {
+        type(0, 'maintext');
+        console.log("Hi there. This is the console. You probably know that. Why else would you open this? Anyways, yeah. You're pretty sus. Even more so because you looked here.")
+    }
+    var txt = "Hey|You|Yes|You|You're|_Pretty Sus";
+    var ia = [0];
+    function type(n, id) {
+        if (ia[n] === undefined) {
+            console.log(n)
+            ia.push(0);
+            type(n);
+        }
+        if (ia[n] < txt.length) {
+            var skip = false;
+            if (txt.charAt(ia[n]) !== '|' && txt.charAt(ia[n]) !== '_')
+                document.getElementById(id).innerHTML += txt.charAt(ia[n]);
+            else if (txt.charAt(ia[n]) === '|') {
+                skip = true;
+                document.getElementById(id).innerHTML += '<br><br>';
+                ia[n]++;
+                setTimeout(function () { type(n, id) }, 200);
+            }
+            else { skip = true; ia[n]++; setTimeout(function () { type(n, id) }, 800) }
+            if (!skip) {
+                ia[n]++;
+                setTimeout(function () { type(n, id) }, 80);
+            }
+        }
+    }
+</script>
+
+</html>
